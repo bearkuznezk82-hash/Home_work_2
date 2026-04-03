@@ -1,0 +1,6 @@
+word = input()
+ind_word = int(round(len(word) / 2, 0))
+if len(word) % 2 == 0:
+    print(word[ind_word - 1:ind_word + 1])
+else:
+    print(word[ind_word])
