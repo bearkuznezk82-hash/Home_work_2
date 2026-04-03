@@ -1,0 +1,8 @@
+import re
+car_ids = ['А222ВС96', 'АБ22ВВ193']
+pattern_id = r'[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}'
+for ids in car_ids:
+    if re.search(pattern_id, ids):
+        print(f"Номер {ids} валиден. Регион: {ids[6:]}")
+    else:
+        print(f"Номер {ids} не валиден")
