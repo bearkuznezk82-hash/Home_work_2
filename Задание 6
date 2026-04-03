@@ -1,0 +1,15 @@
+import re
+stream = [
+    'user100,2022-01-01;150',
+    'user99,2022-01-07;205',
+    'user1001,2022-03-29;81'
+]
+pattern_users = r"user\d+"
+view_count = 0
+users = []
+sum = 0
+for u in stream:
+    users.append((re.search(pattern_users, u)).group())
+    view_count += int(u.split(';', 1)[1])
+unique_users = len(set(users))
+print(f"Среднее количество просмотров на уникального пользователя: {view_count / unique_users:.2f}")
